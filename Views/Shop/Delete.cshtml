@@ -1,0 +1,55 @@
+﻿@model Shop
+
+@{
+	ViewData["title"] = "Delete Shop";
+}
+<div class="row text">
+	<div class="col-md-8 offset-2">
+		<h1>Delete confirmation For @Model.Name</h1>
+
+		<div class="row">
+			<div class="col-md-8 offset-2">
+				<div class="form-group text-center">
+					<img id="Shoplogoperview" width="150px"/>
+				</div><br />
+					<div class="form-group">
+						<label asp-for="Shoplogo" class="control-lable"></label>
+						<input asp-for="Shoplogo" class="form-control" readonly />
+						<span asp-validation-for="Shoplogo" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Name" class="control-lable"></label>
+						<input asp-for="Name" class="form-control" readonly/>
+						<span asp-validation-for="Name" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Location" class="control-lable"></label>
+						<input asp-for="Location" class="form-control" readonly/>
+						<span asp-validation-for="Location" class="text-danger"></span>
+					</div><br />
+					<div class="form-group" style="justify-content:space-between;">
+						<form asp-action="Delete">
+							<input type="hidden" asp-for="Id" />
+							<input type="submit" class="btn btn-outline-danger float-end" value="confirm Delete" />
+						</form>
+						
+						<a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+					</div>
+
+				
+
+			</div>
+		</div>
+	</div>
+</div>
+@section script{
+	<script>
+		$(document).ready(function(){
+			var output=document.getElementById('Shoplogoperview');
+			output.src=$("#Shoplogo").val();
+
+		})
+	</script>
+
+
+}

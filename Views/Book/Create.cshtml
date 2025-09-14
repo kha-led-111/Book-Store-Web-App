@@ -1,0 +1,105 @@
+﻿ @model Bookstore_Ecommerce.Models.Book
+@{
+	Layout = "_Layout";
+	var authorItems = ViewBag.authors as IEnumerable<SelectListItem> ?? Enumerable.Empty<SelectListItem>();
+	var publishItems = ViewBag.publish as IEnumerable<SelectListItem> ?? Enumerable.Empty<SelectListItem>();
+}
+<h2>@ViewBag.Title</h2>
+<div class="row text">
+	<div class="col-md-8 offset-2">
+		<h1>Add New book</h1>
+		<div class="row">
+			<div class="col-md-8 offset-2">
+				<form asp-action="Create" method="post" asp-antiforgery="true">
+					<div asp-validation-summary="ModelOnly" class="text-danger">
+					</div><br />
+
+					<div class="form-group text-center">
+						<img id="Shoplogoperview" />
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Image" class="control-lable"></label>
+						<input asp-for="Image" class="form-control" />
+						<span asp-validation-for="Image" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Book_Name" class="control-lable"></label>
+						<input asp-for="Book_Name" class="form-control" />
+						<span asp-validation-for="Book_Name" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Description" class="control-lable"></label>
+						<input asp-for="Description" class="form-control" />
+						<span asp-validation-for="Description" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Publish_data" class="control-lable"></label>
+						<input asp-for="Publish_data" type="date" class="form-control" />
+						<span asp-validation-for="Publish_data" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="price" class="control-lable"></label>
+						<input asp-for="price" class="form-control" />
+						<span asp-validation-for="price" class="text-danger"></span>
+					</div><br />
+					<div class="form-group ">
+						<label asp-for="Category" class="control-lable"></label>
+						<select asp-for="Category" class="form-control" asp-items="Html.GetEnumSelectList<Bookstore_Ecommerce.Data.Category>()">
+						</select>
+						<span asp-validation-for="Category" class="text-danger"></span>
+						@* <input asp-for="Category" class="form-control" /> *@
+						
+						<!--<div class="dropdown-menu">
+							@* //@foreach(var I in Enum.GetValues(typeof(Bookstore_Ecommerce.Data.Category)))
+							{
+								<a class="dropdown-item">@I</a>
+							} *@
+						</div>-->
+					</div><br />
+					<div class="form-group">
+						@* <label asp-for="Author" class="control-lable"></label>
+						<input asp-for="Author" class="form-control" />
+						<span asp-validation-for="Author" class="text-danger"></span> *@
+						@* <label asp-for="Author" class="control-label"></label>
+						<select asp-for="AuthorId" class="form-control"
+								asp-items="ViewBag.AuthorList">
+							<option value="">-- اختر المؤلف --</option>
+						</select>
+						<span asp-validation-for="AuthorId" class="text-danger"></span> *@
+						<label asp-for="AuthorId" class="control-lable"></label>
+						<select asp-for="AuthorId" class="form-control" asp-items="ViewBag.authors">
+                          <option value="">select Author</option>
+                        </select>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Publish_houseId" class="control-lable"></label>
+						<select asp-for="Publish_houseId" class="form-control" asp-items="ViewBag.publish">
+							<option value="">select publish house</option>
+						</select>
+					</div><br />
+					<div class="form-group">
+						<input type="submit" class="btn btn-outline-success float-end" value="create" />
+						<a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+@section script {
+
+	<script>
+
+		$(document).ready(function(){
+			var output=document.getElementById('Shoplogoperview');
+			output.src=$("#Image").val();
+
+		})
+
+	</script>
+
+}
+
+

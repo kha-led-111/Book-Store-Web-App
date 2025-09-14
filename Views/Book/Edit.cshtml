@@ -1,0 +1,86 @@
+﻿@model Book
+
+@{
+    Layout = "_Layout";
+    var authors = ViewBag.Authors as IEnumerable<SelectListItem> ?? Enumerable.Empty<SelectListItem>();
+    var publishers = ViewBag.PublishHouses as IEnumerable<SelectListItem> ?? Enumerable.Empty<SelectListItem>();
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <h1>Edit Book</h1>
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
+
+            <div class="form-group text-center">
+                <img id="Shoplogoperview" src="@Model?.Image ?? " /images/default.png"" style="max-width:200px" />
+            </div><br />
+
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div><br />
+
+            <div class="form-group">
+                <label asp-for="Book_Name" class="control-label"></label>
+                <input asp-for="Book_Name" class="form-control" value="@Model?.Book_Name" />
+                <span asp-validation-for="Book_Name" class="text-danger"></span>
+            </div><br />
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" value="@Model?.Description" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div><br />
+
+            <div class="form-group">
+                <label asp-for="price" class="control-label"></label>
+                <input asp-for="price" class="form-control" value="@Model?.price" />
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div><br />
+
+            <div class="form-group">
+                <label asp-for="Publish_data" class="control-label"></label>
+                <input asp-for="Publish_data" type="date" class="form-control" value="@Model?.Publish_data.ToString("yyyy-MM-dd")" />
+                <span asp-validation-for="Publish_data" class="text-danger"></span>
+            </div><br />
+
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" value="@Model?.Category" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div><br />
+
+            <div class="form-group">
+                <label asp-for="AuthorId" class="control-label"></label>
+                <select asp-for="AuthorId" asp-items="authors" class="form-select"></select>
+                <span asp-validation-for="AuthorId" class="text-danger"></span>
+            </div><br />
+
+            <div class="form-group">
+                <label asp-for="Publish_houseId" class="control-label"></label>
+                <select asp-for="Publish_houseId" asp-items="publishers" class="form-select"></select>
+                <span asp-validation-for="Publish_houseId" class="text-danger"></span>
+            </div><br />
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-outline-success float-end" value="Update" />
+                <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section script {
+    <script>
+        $(document).ready(function(){
+            var output = document.getElementById('Shoplogoperview');
+            if(output) {
+                output.src = $("#Image").val() || "/images/default.png";
+            }
+        });
+    </script>
+}

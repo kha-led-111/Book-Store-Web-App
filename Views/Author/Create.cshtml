@@ -1,0 +1,57 @@
+﻿@model Author
+
+@{
+	ViewData["title"] = "create new Author";
+}
+<div class="row text">
+	<div class="col-md-8 offset-2">
+		<h1>Add New Shop</h1>
+
+		<div class="row">
+			<div class="col-md-8 offset-2">
+				<form asp-action="Create">
+					<div asp-validation-summary="ModelOnly" class="text-danger">
+					</div><br />
+					<div class="form-group text-center">
+						<img id="Shoplogoperview" />
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Profile_picture" class="control-lable"></label>
+						<input asp-for="Profile_picture" class="form-control" />
+						<span asp-validation-for="Profile_picture" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="fullname" class="control-lable"></label>
+						<input asp-for="fullname" class="form-control" />
+						<span asp-validation-for="fullname" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Bio" class="control-lable"></label>
+						<input asp-for="Bio" class="form-control" />
+						<span asp-validation-for="Bio" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<input type="submit" class="btn btn-outline-success float-end" value="create" />
+						<a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+@section script {
+
+	<script>
+
+		$(document).ready(function(){
+			var output=document.getElementById('Shoplogoperview');
+			output.src=$("#Shoplogo").val();
+
+		})
+
+	</script>
+
+}
+

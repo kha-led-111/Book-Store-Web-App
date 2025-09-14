@@ -1,0 +1,51 @@
+﻿@model Publishing_House
+
+@{
+	ViewData["title"] = "Details";
+}
+<div class="row text">
+	<div class="col-md-8 offset-2">
+		<h1>Details For @Model.Fullname</h1>
+
+		<div class="row">
+			<div class="col-md-8 offset-2">
+				<div class="form-group text-center">
+					<img id="Profile_picture_perview" width="150px" />
+				</div><br />
+				<div class="form-group">
+					<label asp-for="Fullname" class="control-lable"></label>
+					<input asp-for="Fullname" class="form-control" readonly />
+					<span asp-validation-for="Fullname" class="text-danger"></span>
+				</div><br />
+				<div class="form-group">
+					<label asp-for="Logo" class="control-lable"></label>
+					<input asp-for="Logo" class="form-control" readonly />
+					<span asp-validation-for="Logo" class="text-danger"></span>
+				</div><br />
+				<div class="form-group">
+					<label asp-for="Bio" class="control-lable"></label>
+					<input asp-for="Bio" class="form-control" readonly />
+					<span asp-validation-for="Bio" class="text-danger"></span>
+				</div><br />
+				<div class="form-group" style="justify-content:space-between;">
+
+					<a class="btn btn-outline-success float-end" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+					<a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
+@section script {
+	<script>
+		$(document).ready(function(){
+			var output=document.getElementById('Profile_picture_perview');
+			output.src=$("#Logo").val();
+		})
+	</script>
+
+
+}

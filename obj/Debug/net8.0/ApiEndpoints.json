@@ -1,0 +1,318 @@
+[
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.AuthorsAPIController",
+    "Method": "Getall",
+    "RelativePath": "api/AuthorsAPI",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.AuthorsAPIController",
+    "Method": "Add",
+    "RelativePath": "api/AuthorsAPI",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "author",
+        "Type": "Bookstore_Ecommerce.Models.Author",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.AuthorsAPIController",
+    "Method": "GetID",
+    "RelativePath": "api/AuthorsAPI/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.AuthorsAPIController",
+    "Method": "Delete",
+    "RelativePath": "api/AuthorsAPI/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.AuthorsAPIController",
+    "Method": "Update",
+    "RelativePath": "api/AuthorsAPI/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "author",
+        "Type": "Bookstore_Ecommerce.Models.Author",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.BooksAPIController",
+    "Method": "Getall",
+    "RelativePath": "api/BooksAPI",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.BooksAPIController",
+    "Method": "Add",
+    "RelativePath": "api/BooksAPI",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "book",
+        "Type": "Bookstore_Ecommerce.Models.Book",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.BooksAPIController",
+    "Method": "GetID",
+    "RelativePath": "api/BooksAPI/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.BooksAPIController",
+    "Method": "Delete",
+    "RelativePath": "api/BooksAPI/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.BooksAPIController",
+    "Method": "Update",
+    "RelativePath": "api/BooksAPI/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "book",
+        "Type": "Bookstore_Ecommerce.Models.Book",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.publish_HouseAPIController",
+    "Method": "Getall",
+    "RelativePath": "api/publish_HouseAPI",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.publish_HouseAPIController",
+    "Method": "Add",
+    "RelativePath": "api/publish_HouseAPI",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "publish",
+        "Type": "Bookstore_Ecommerce.Models.Publishing_House",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.publish_HouseAPIController",
+    "Method": "GetID",
+    "RelativePath": "api/publish_HouseAPI/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.publish_HouseAPIController",
+    "Method": "Delete",
+    "RelativePath": "api/publish_HouseAPI/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.publish_HouseAPIController",
+    "Method": "Update",
+    "RelativePath": "api/publish_HouseAPI/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "publish",
+        "Type": "Bookstore_Ecommerce.Models.Publishing_House",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.ShopController",
+    "Method": "GetAll",
+    "RelativePath": "api/Shop",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.ShopController",
+    "Method": "Create",
+    "RelativePath": "api/Shop",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shop",
+        "Type": "Bookstore_Ecommerce.Models.Shop",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.ShopController",
+    "Method": "GetById",
+    "RelativePath": "api/Shop/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.ShopController",
+    "Method": "Update",
+    "RelativePath": "api/Shop/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "shop",
+        "Type": "Bookstore_Ecommerce.Models.Shop",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Bookstore_Ecommerce.API.ShopController",
+    "Method": "Delete",
+    "RelativePath": "api/Shop/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

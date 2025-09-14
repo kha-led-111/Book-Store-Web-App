@@ -1,0 +1,55 @@
+﻿@model Author
+
+@{
+	ViewData["title"] = "Delete Author";
+}
+<div class="row text">
+	<div class="col-md-8 offset-2">
+		<h1>Delete confirmation For @Model.fullname</h1>
+
+		<div class="row">
+			<div class="col-md-8 offset-2">
+				<div class="form-group text-center">
+					<img id="Profile_picture_per" width="150px" />
+				</div><br />
+				<div class="form-group">
+					<label asp-for="Profile_picture" class="control-lable"></label>
+					<input asp-for="Profile_picture" class="form-control" readonly />
+					<span asp-validation-for="Profile_picture" class="text-danger"></span>
+				</div><br />
+				<div class="form-group">
+					<label asp-for="fullname" class="control-lable"></label>
+					<input asp-for="fullname" class="form-control" readonly />
+					<span asp-validation-for="fullname" class="text-danger"></span>
+				</div><br />
+				<div class="form-group">
+					<label asp-for="Bio" class="control-lable"></label>
+					<input asp-for="Bio" class="form-control" readonly />
+					<span asp-validation-for="Bio" class="text-danger"></span>
+				</div><br />
+				<div class="form-group" style="justify-content:space-between;">
+					<form asp-action="Delete">
+						<input type="hidden" asp-for="Id" />
+						<input type="submit" class="btn btn-outline-danger float-end" value="confirm Delete" />
+					</form>
+
+					<a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
+@section script {
+	<script>
+		$(document).ready(function(){
+			var output=document.getElementById('Profile_picture_per');
+			output.src=$("#Profile_picture").val();
+
+		})
+	</script>
+
+
+}

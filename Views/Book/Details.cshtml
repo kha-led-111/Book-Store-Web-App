@@ -1,0 +1,85 @@
+﻿@model Book
+
+@{
+	ViewData["title"] = "Details";
+}
+<div class="row text">
+	<div class="col-md-8 offset-2">
+		<h1>Details For @Model.Book_Name</h1>
+
+		<div class="row">
+			<div class="col-md-8 offset-2">
+				<div class="form-group text-center">
+					<img id="Profile_picture_perview" width="150px" />
+				</div><br />
+				<form asp-action="Create">
+					<div asp-validation-summary="ModelOnly" class="text-danger">
+					</div><br />
+					<div class="form-group text-center">
+						<img id="Shoplogoperview" />
+					</div><br />
+					<div class="form-group">
+						<label asp-for=" Image" class="control-lable"></label>
+						<input asp-for=" Image" class="form-control" readonly />
+						<span asp-validation-for=" Image" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Book_Name" class="control-lable"></label>
+						<input asp-for="Book_Name" class="form-control" readonly />
+						<span asp-validation-for="Book_Name" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Description" class="control-lable"></label>
+						<input asp-for="Description" class="form-control" readonly />
+						<span asp-validation-for="Description" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="price" class="control-lable"></label>
+						<input asp-for="price" class="form-control" readonly />
+						<span asp-validation-for="price" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Publish_data" class="control-lable"></label>
+						<input asp-for="Publish_data" class="form-control" readonly />
+						<span asp-validation-for="Publish_data" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Category" class="control-lable"></label>
+						<input asp-for="Category" class="form-control" readonly />
+						<span asp-validation-for="Category" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Author" class="control-lable"></label>
+						<input asp-for="AuthorId" class="form-control" readonly />
+						<span asp-validation-for="AuthorId" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Publish_house" class="control-lable"></label>
+						<input asp-for="Publish_houseId" class="form-control" readonly />
+						<span asp-validation-for="Publish_houseId" class="text-danger"></span>
+					</div><br />
+					
+					<div class="form-group">
+						<a class="btn btn-outline-primary" asp-controller="Book" asp-action="Edit" asp-route-id="@Model.Id"><i class="bi bi-pencil-square"></i>Edit</a>|
+						<a class="btn btn-danger" asp-controller="Book" asp-action="Delete" asp-route-id="@Model.Id"><i class="bi bi-trash"></i>Delete</a>
+						<a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+					</div>
+
+				</form>
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
+@section script {
+	<script>
+		$(document).ready(function(){
+			var output=document.getElementById('Profile_picture_perview');
+			output.src=$("#Image").val();
+		})
+	</script>
+
+
+}

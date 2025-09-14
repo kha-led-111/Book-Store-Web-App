@@ -1,0 +1,56 @@
+﻿@model Shop
+
+@{
+	ViewData["title"] = "create new Shop";
+}
+<div class="row text">
+	<div class="col-md-8 offset-2">
+		<h1>Edit  Shop</h1>
+
+		<div class="row">
+			<div class="col-md-8 offset-2">
+				<form asp-action="Edit">
+					<div asp-validation-summary="ModelOnly" class="text-danger">
+					</div><br />
+					<div class="form-group text-center">
+						<img id="Shoplogoperview" width="150px"/>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Shoplogo" class="control-lable"></label>
+						<input asp-for="Shoplogo" class="form-control" />
+						<span asp-validation-for="Shoplogo" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Name" class="control-lable"></label>
+						<input asp-for="Name" class="form-control" />
+						<span asp-validation-for="Name" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<label asp-for="Location" class="control-lable"></label>
+						<input asp-for="Location" class="form-control" />
+						<span asp-validation-for="Location" class="text-danger"></span>
+					</div><br />
+					<div class="form-group">
+						<input type="submit" class="btn btn-outline-success float-end" value="Update" />
+						<a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+@section script {
+
+	<script>
+
+		$(document).ready(function(){
+			var output=document.getElementById('Shoplogoperview');
+			output.src=$("#Shoplogo").val();
+
+		})
+
+	</script>
+
+}
