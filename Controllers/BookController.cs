@@ -42,7 +42,7 @@ namespace Bookstore_Ecommerce.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([Bind("Image,Book_Name,Description,Publish_data,price,Category,AuthorId,Publish_houseId")] Book book)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Add(book);
                 await _context.SaveChangesAsync();
@@ -128,4 +128,5 @@ namespace Bookstore_Ecommerce.Controllers
         }
     }
 }
+
 
